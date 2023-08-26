@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default {
-    port: process.env.port,
+    PORT: process.env.PORT,
     saltWorkFactor: process.env.saltWorkFactor,
     host: process.env.host,
     user_db: process.env.user_db,
