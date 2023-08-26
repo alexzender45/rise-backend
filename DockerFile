@@ -1,0 +1,18 @@
+FROM node:14.17.0-alpine
+
+RUN npm install -g -f yarn
+
+# Set the working directory in the container to /app
+WORKDIR /src/
+
+ADD . /src/
+
+EXPOSE 4001
+
+RUN yarn install
+
+RUN yarn build || exit 0
+
+RUN yarn build 
+
+CMD ["yarn", "dev"]
